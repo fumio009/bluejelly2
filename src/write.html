@@ -81,31 +81,16 @@ Copyright 2017 JellyWare Inc. All Rights Reserved.
     //Write後の処理
     //--------------------------------------------------
     ble.onWrite = function (uuid) {
-
-      console.log("bbb");
-
       document.getElementById('uuid_name').innerHTML = uuid;
       document.getElementById('status').innerHTML = "written data"
       // document.getElementById('status').innerHTML = 2
     }
 
-
     //-------------------------------------------------
     //ボタンが押された時のイベント登録
     //--------------------------------------------------
     document.getElementById('write').addEventListener('click', function () {
-
-      console.log("aaa");
-
-      let xSendVal = "Hello";
-
-      //文字列をArrayBufferに変換
-      // let arrayBuffe = new TextEncoder().encode(xSendVal);
-      let arrayBuffe = new TextEncoder().encode(document.getElementById('write_value').value);
-
-      // ble.write('UUID2', document.getElementById('write_value').value);
-      // ble.write('UUID2', "Hello");
-      // ble.write('UUID2', ['H', 'e', 'l', 'l', 'o']);
+      let arrayBuffe = new TextEncoder().encode(document.getElementById('write_value').value); // 文字列をArrayBufferに変換
       ble.write('UUID2', arrayBuffe);
     });
 
@@ -113,18 +98,9 @@ Copyright 2017 JellyWare Inc. All Rights Reserved.
     //ボタンが押された時のイベント登録
     //--------------------------------------------------
     document.getElementById('led_on').addEventListener('click', function () {
-
-      console.log("aaa");
-
-      let xSendVal = "Hello12";
-
-      //文字列をArrayBufferに変換
-      let arrayBuffe = new TextEncoder().encode(xSendVal);
-      // let arrayBuffe = new TextEncoder().encode(document.getElementById('write_value').value);
-
-      // ble.write('UUID2', document.getElementById('write_value').value);
-      // ble.write('UUID2', "Hello");
-      // ble.write('UUID2', ['H', 'e', 'l', 'l', 'o']);
+      // let xSendVal = "Hello12";
+      // let arrayBuffe = new TextEncoder().encode(xSendVal); // 文字列をArrayBufferに変換
+      let arrayBuffe = new TextEncoder().encode("Hello12"); // 文字列をArrayBufferに変換
       ble.write('UUID2', arrayBuffe);
     });
 
@@ -132,22 +108,11 @@ Copyright 2017 JellyWare Inc. All Rights Reserved.
     //ボタンが押された時のイベント登録
     //--------------------------------------------------
     document.getElementById('led_off').addEventListener('click', function () {
-
-      console.log("aaa");
-
-      let xSendVal = "World";
-
-      //文字列をArrayBufferに変換
-      let arrayBuffe = new TextEncoder().encode(xSendVal);
-      // let arrayBuffe = new TextEncoder().encode(document.getElementById('write_value').value);
-
-      // ble.write('UUID2', document.getElementById('write_value').value);
-      // ble.write('UUID2', "Hello");
-      // ble.write('UUID2', ['H', 'e', 'l', 'l', 'o']);
+      // let xSendVal = "World";
+      // let arrayBuffe = new TextEncoder().encode(xSendVal); // 文字列をArrayBufferに変換
+      let arrayBuffe = new TextEncoder().encode("World"); // 文字列をArrayBufferに変換
       ble.write('UUID2', arrayBuffe);
     });
-
-
 
   </script>
 </body>
